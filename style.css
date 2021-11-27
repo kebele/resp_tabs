@@ -1,0 +1,53 @@
+.wrapper {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 5%;
+  line-height: 1.5;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.box {
+  /* yanyana diz */
+  display: flex;
+  /* sığmayan alta geçsin */
+  flex-wrap: wrap;
+}
+.box label {
+  background: cadetblue;
+  font-weight: bold;
+  text-align: center;
+  order: 1;
+  display: block;
+  padding: 16px 120px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.box .content {
+  display: none;
+  padding: 30px;
+  background: cornflowerblue;
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+}
+.box input[type="radio"] {
+  display: none;
+}
+.box input[type="radio"]:checked + label {
+  background: coral;
+}
+.box input[type="radio"]:checked + label + .content {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .box .content,
+  .box label {
+    order: initial;
+  }
+  .box label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 4px;
+  }
+}
